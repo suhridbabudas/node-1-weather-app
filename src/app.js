@@ -4,6 +4,9 @@ const app = express();
 const hbs = require("hbs");
 const forecast = require("./utils/forecast");
 
+// defining port
+const port = process.env.PORT || 3000;
+
 // defining the path for express congig
 const publicDirPath = path.join(__dirname, "../public");
 const viewsPath = path.join(__dirname, "../templets/views");
@@ -84,6 +87,6 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("Server is running on port 3000.");
+app.listen(port, () => {
+  console.log("Server is running on port " + port);
 });

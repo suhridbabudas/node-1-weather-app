@@ -39,7 +39,7 @@ weatherForm.addEventListener("submit", (event) => {
   event.preventDefault();
   loading.textContent = "Loading ...";
   let searchTerm = searchText.value ? searchText.value : "";
-  let url = `http://localhost:3000/weather?address=${searchTerm}`;
+  let url = `/weather?address=${searchTerm}`;
   fetch(url)
     .then((response) => {
       response.json().then((data) => {
