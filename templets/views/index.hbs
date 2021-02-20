@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Home</title>
+    <link rel="icon" href="/img/organic.png">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="main-content">
+        {{>header}}
+        <h2>{{title}}</h2>
+        <hr>
+        <br>
+        <form>
+            <div>
+                <div class="label">
+                    <label>Enter Location</label>
+                </div>
+                <div class="search-field">
+                    <input type="text" placeholder="Location">
+                    <button>Search</button>
+                </div>
+            </div>
+            <h3 id="heading"></h3>
+            <div class="error">
+                <p id="error-para"></p>
+            </div>
+            <div class="load">
+                <label id="loading"></label>
+            </div>
+            <div class="weather-report">
+                <div class="left">
+                    <div class="left-child">
+                        <label id="label-1"></label>
+                        <label id="label-v-1"></label>
+                    </div>
+                    <div class="left-child">
+                        <label id="label-2"></label>
+                        <label id="label-v-2"></label>
+                    </div>
+                    <div class="left-child">
+                        <label id="label-3"></label>
+                        <label id="label-v-3"></label>
+                    </div>
+                </div>
+
+                <div class="right">
+                    <div class="right-child">
+                        <label id="label-4"></label>
+                        <label id="label-v-4"></label>
+                    </div>
+                    <div class="right-child">
+                        <label id="label-5"></label>
+                        <label id="label-v-5"></label>
+                    </div>
+                    <div class="right-child">
+                        <label id="label-6"></label>
+                        <label id="label-v-6"></label>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+    {{>footer}}
+    <script src="/js/app.js"></script>
+</body>
+
+</html>
