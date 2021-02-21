@@ -17,9 +17,10 @@ const forecast = (address, callback) => {
         forecast: current.weather_descriptions[0],
         temperature: temperatureData.temperature,
         feelslikeTemperature: temperatureData.feelslike,
+        humidity: temperatureData.humidity,
         place: location.name,
         region: location.region,
-        conuntry: location.country,
+        conuntry: location.country
       });
     }
   });

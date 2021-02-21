@@ -8,12 +8,14 @@ const label_3 = document.querySelector("#label-3");
 const label_4 = document.querySelector("#label-4");
 const label_5 = document.querySelector("#label-5");
 const label_6 = document.querySelector("#label-6");
+const label_7 = document.querySelector("#label-7");
 const label_v_1 = document.querySelector("#label-v-1");
 const label_v_2 = document.querySelector("#label-v-2");
 const label_v_3 = document.querySelector("#label-v-3");
 const label_v_4 = document.querySelector("#label-v-4");
 const label_v_5 = document.querySelector("#label-v-5");
 const label_v_6 = document.querySelector("#label-v-6");
+const label_v_7 = document.querySelector("#label-v-7");
 const loading = document.querySelector("#loading");
 
 function clearValue(isError) {
@@ -30,6 +32,8 @@ function clearValue(isError) {
     label_v_5.textContent = "";
     label_6.textContent = "";
     label_v_6.textContent = "";
+    label_7.textContent = "";
+    label_v_7.textContent = "";
   } else {
     error_para.textContent = "";
   }
@@ -68,6 +72,8 @@ weatherForm.addEventListener("submit", (event) => {
           label_v_5.textContent = data.data.region;
           label_6.textContent = "Country:";
           label_v_6.textContent = data.data.conuntry;
+          label_7.textContent = "Humidity:";
+          label_v_7.textContent = data.data.humidity;
         }
       });
     })
