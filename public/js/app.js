@@ -73,7 +73,7 @@ weatherForm.addEventListener("submit", (event) => {
           label_6.textContent = "Country:";
           label_v_6.textContent = data.data.conuntry;
           label_7.textContent = "Humidity:";
-          label_v_7.textContent = data.data.humidity;
+          label_v_7.textContent = data.data.humidity + '%';
         }
       });
     })
