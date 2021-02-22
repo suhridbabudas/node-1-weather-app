@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 const hbs = require("hbs");
 const forecast = require("./utils/forecast");
+const fs = require("fs");
 
 // defining port
 const port = process.env.PORT || 3000;
@@ -35,8 +36,31 @@ app.get("/about", (req, res) => {
 });
 
 app.get("/help", (req, res) => {
+  const path = "/Users/suhrid/Desktop/Node Course/web-server/log-file/logs.log";
+  let data ={};
+  if (fs.existsSync(path)) {
+    let protocol = req.protocol;
+    // req.protocol = protocol === 'https' ? 'http': 'https'
+    data = {
+      data: new Date,
+      protocol: req.protocol,
+      qurey: JSON.stringify(req.query)
+    }
+    fs.appendFile(path, JSON.stringify(data), (err) => {
+      if (err) {
+        console.log("Unable to create file");
+      }
+    });
+  } else {
+    fs.writeFile(path, JSON.stringify(data), (err) => {
+      if (err) {
+        console.log("Unable to create file");
+      }
+    });
+  }
+
   res.render("help", {
-    title: "Help",
+    title: req.query.error,
     name: "Das",
   });
 });
